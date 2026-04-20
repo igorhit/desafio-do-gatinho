@@ -21,11 +21,13 @@ Randomizador para o jogo **Legends of Runeterra**. Configure as opções, aperte
 npm install
 
 # Iniciar (web ou QR code para celular)
-npx expo start
+npx expo start --clear
 
 # Só web
-npx expo start --web
+npx expo start --web --clear
 ```
+
+> **Importante:** use `--clear` na primeira execução (e sempre que instalar novas dependências) para limpar o cache do Metro.
 
 Acesse `http://localhost:8081` no browser, ou escaneie o QR code com o app **Expo Go** no celular.
 
@@ -100,6 +102,7 @@ Para adicionar novas tags, basta adicioná-las ao JSON dos itens e incluir o pes
 ```
 desafio-do-gatinho/
 ├── app/
+│   ├── +html.tsx           # Configuração do HTML raiz (web)
 │   ├── _layout.tsx         # Layout raiz (Expo Router)
 │   └── index.tsx           # Tela principal
 ├── src/
