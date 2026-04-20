@@ -1,0 +1,114 @@
+[
+  {
+    "id": "jinx",
+    "nome": "Jinx",
+    "estrelas": 3,
+    "tags": ["agressivo", "comum"],
+    "imagePath": "champions/jinx.png"
+  },
+  {
+    "id": "jinx6",
+    "nome": "Jinx",
+    "estrelas": 6,
+    "tags": ["forte", "raro"],
+    "imagePath": "champions/jinx6.png"
+  },
+  {
+    "id": "vi",
+    "nome": "Vi",
+    "estrelas": 3,
+    "tags": ["tanque", "comum"],
+    "imagePath": "champions/vi.png"
+  },
+  {
+    "id": "vi6",
+    "nome": "Vi",
+    "estrelas": 6,
+    "tags": ["forte", "tanque", "raro"],
+    "imagePath": "champions/vi6.png"
+  },
+  {
+    "id": "lux",
+    "nome": "Lux",
+    "estrelas": 3,
+    "tags": ["mago", "comum"],
+    "imagePath": "champions/lux.png"
+  },
+  {
+    "id": "lux6",
+    "nome": "Lux",
+    "estrelas": 6,
+    "tags": ["forte", "mago", "raro"],
+    "imagePath": "champions/lux6.png"
+  },
+  {
+    "id": "garen",
+    "nome": "Garen",
+    "estrelas": 3,
+    "tags": ["tanque", "comum"],
+    "imagePath": "champions/garen.png"
+  },
+  {
+    "id": "garen6",
+    "nome": "Garen",
+    "estrelas": 6,
+    "tags": ["forte", "tanque", "raro"],
+    "imagePath": "champions/garen6.png"
+  },
+  {
+    "id": "ezreal",
+    "nome": "Ezreal",
+    "estrelas": 3,
+    "tags": ["atirador", "comum"],
+    "imagePath": "champions/ezreal.png"
+  },
+  {
+    "id": "ezreal6",
+    "nome": "Ezreal",
+    "estrelas": 6,
+    "tags": ["forte", "atirador", "raro"],
+    "imagePath": "champions/ezreal6.png"
+  },
+  {
+    "id": "thresh",
+    "nome": "Thresh",
+    "estrelas": 3,
+    "tags": ["suporte", "comum"],
+    "imagePath": "champions/thresh.png"
+  },
+  {
+    "id": "thresh6",
+    "nome": "Thresh",
+    "estrelas": 6,
+    "tags": ["forte", "suporte", "raro"],
+    "imagePath": "champions/thresh6.png"
+  },
+  {
+    "id": "zed",
+    "nome": "Zed",
+    "estrelas": 3,
+    "tags": ["assassino", "comum"],
+    "imagePath": "champions/zed.png"
+  },
+  {
+    "id": "zed6",
+    "nome": "Zed",
+    "estrelas": 6,
+    "tags": ["forte", "assassino", "raro"],
+    "imagePath": "champions/zed6.png"
+  },
+  {
+    "id": "yasuo",
+    "nome": "Yasuo",
+    "estrelas": 3,
+    "tags": ["agressivo", "comum"],
+    "imagePath": "champions/yasuo.png"
+  },
+  {
+    "id": "yasuo6",
+    "nome": "Yasuo",
+    "estrelas": 6,
+    "tags": ["forte", "agressivo", "raro"],
+    "imagePath": "champions/yasuo6.png"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "espada-infinita",
+    "nome": "Espada Infinita",
+    "raridade": "epica",
+    "tags": ["forte", "ataque"],
+    "imagePath": "relics/espada-infinita.png"
+  },
+  {
+    "id": "cajado-arcanjo",
+    "nome": "Cajado do Arcanjo",
+    "raridade": "epica",
+    "tags": ["forte", "magia"],
+    "imagePath": "relics/cajado-arcanjo.png"
+  },
+  {
+    "id": "escudo-sol",
+    "nome": "Escudo Solar",
+    "raridade": "rara",
+    "tags": ["tanque", "defesa"],
+    "imagePath": "relics/escudo-sol.png"
+  },
+  {
+    "id": "botas-mobilidade",
+    "nome": "Botas de Mobilidade",
+    "raridade": "comum",
+    "tags": ["velocidade"],
+    "imagePath": "relics/botas-mobilidade.png"
+  },
+  {
+    "id": "coleira-mortal",
+    "nome": "Coleira Mortal",
+    "raridade": "rara",
+    "tags": ["ataque", "penetracao"],
+    "imagePath": "relics/coleira-mortal.png"
+  },
+  {
+    "id": "manto-coruja",
+    "nome": "Manto da Coruja",
+    "raridade": "comum",
+    "tags": ["magia", "defesa"],
+    "imagePath": "relics/manto-coruja.png"
+  },
+  {
+    "id": "coroa-shurelia",
+    "nome": "Coroa de Shurelia",
+    "raridade": "rara",
+    "tags": ["suporte", "velocidade"],
+    "imagePath": "relics/coroa-shurelia.png"
+  },
+  {
+    "id": "foice-espectral",
+    "nome": "Foice Espectral",
+    "raridade": "epica",
+    "tags": ["forte", "assassino"],
+    "imagePath": "relics/foice-espectral.png"
+  },
+  {
+    "id": "elmo-do-sol",
+    "nome": "Elmo do Sol",
+    "raridade": "rara",
+    "tags": ["tanque", "magia"],
+    "imagePath": "relics/elmo-do-sol.png"
+  },
+  {
+    "id": "anel-drakkar",
+    "nome": "Anel de Drakkar",
+    "raridade": "comum",
+    "tags": ["magia"],
+    "imagePath": "relics/anel-drakkar.png"
+  },
+  {
+    "id": "talisma-shurelya",
+    "nome": "Talismã de Shurelya",
+    "raridade": "assinatura",
+    "tags": ["forte", "suporte", "raro"],
+    "imagePath": "relics/talisma-shurelya.png"
+  },
+  {
+    "id": "lanterna-runaan",
+    "nome": "Lanterna de Runaan",
+    "raridade": "assinatura",
+    "tags": ["forte", "atirador", "raro"],
+    "imagePath": "relics/lanterna-runaan.png"
+  },
+  {
+    "id": "pocao-saude",
+    "nome": "Poção de Saúde",
+    "raridade": "comum",
+    "tags": ["suporte"],
+    "imagePath": "relics/pocao-saude.png"
+  },
+  {
+    "id": "algemas-correntes",
+    "nome": "Algemas de Correntes",
+    "raridade": "rara",
+    "tags": ["controle", "suporte"],
+    "imagePath": "relics/algemas-correntes.png"
+  },
+  {
+    "id": "cetro-void",
+    "nome": "Cetro do Vazio",
+    "raridade": "assinatura",
+    "tags": ["forte", "magia", "raro"],
+    "imagePath": "relics/cetro-void.png"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "covil-do-dragao",
+    "nome": "Covil do Dragão",
+    "dificuldade": "medio",
+    "tags": ["comum"],
+    "imagePath": "adventures/covil-do-dragao.png"
+  },
+  {
+    "id": "torre-solitaria",
+    "nome": "Torre Solitária",
+    "dificuldade": "facil",
+    "tags": ["comum", "iniciante"],
+    "imagePath": "adventures/torre-solitaria.png"
+  },
+  {
+    "id": "cripta-dos-mortos",
+    "nome": "Cripta dos Mortos",
+    "dificuldade": "dificil",
+    "tags": ["forte", "raro"],
+    "imagePath": "adventures/cripta-dos-mortos.png"
+  },
+  {
+    "id": "floresta-sombria",
+    "nome": "Floresta Sombria",
+    "dificuldade": "medio",
+    "tags": ["comum"],
+    "imagePath": "adventures/floresta-sombria.png"
+  },
+  {
+    "id": "picos-gelados",
+    "nome": "Picos Gelados",
+    "dificuldade": "dificil",
+    "tags": ["forte"],
+    "imagePath": "adventures/picos-gelados.png"
+  },
+  {
+    "id": "planicie-ardente",
+    "nome": "Planície Ardente",
+    "dificuldade": "facil",
+    "tags": ["comum"],
+    "imagePath": "adventures/planicie-ardente.png"
+  },
+  {
+    "id": "abismo-sombrio",
+    "nome": "Abismo Sombrio",
+    "dificuldade": "dificil",
+    "tags": ["forte", "raro"],
+    "imagePath": "adventures/abismo-sombrio.png"
+  },
+  {
+    "id": "santuario-esquecido",
+    "nome": "Santuário Esquecido",
+    "dificuldade": "medio",
+    "tags": ["magico"],
+    "imagePath": "adventures/santuario-esquecido.png"
+  },
+  {
+    "id": "ruinas-de-noxus",
+    "nome": "Ruínas de Noxus",
+    "dificuldade": "medio",
+    "tags": ["comum", "guerra"],
+    "imagePath": "adventures/ruinas-de-noxus.png"
+  },
+  {
+    "id": "laboratorio-do-professor",
+    "nome": "Laboratório do Professor",
+    "dificuldade": "facil",
+    "tags": ["comum", "iniciante"],
+    "imagePath": "adventures/laboratorio-do-professor.png"
+  },
+  {
+    "id": "fortaleza-de-demacia",
+    "nome": "Fortaleza de Demacia",
+    "dificuldade": "dificil",
+    "tags": ["forte", "guerra"],
+    "imagePath": "adventures/fortaleza-de-demacia.png"
+  },
+  {
+    "id": "ilhas-das-sombras",
+    "nome": "Ilhas das Sombras",
+    "dificuldade": "dificil",
+    "tags": ["forte", "raro", "magico"],
+    "imagePath": "adventures/ilhas-das-sombras.png"
+  }
+]

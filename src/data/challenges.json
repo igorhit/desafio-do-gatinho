@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ch-01",
+    "descricao": "Você só pode usar habilidades — nenhum ataque básico durante toda a rodada!"
+  },
+  {
+    "id": "ch-02",
+    "descricao": "Só pode escolher a opção da direita em todo momento que tiver uma escolha."
+  },
+  {
+    "id": "ch-03",
+    "descricao": "Você não pode comprar nenhuma Relíquia além das que já foram sorteadas."
+  },
+  {
+    "id": "ch-04",
+    "descricao": "Cada vez que seu campeão morrer, você deve pular um turno de combate."
+  },
+  {
+    "id": "ch-05",
+    "descricao": "Você deve vencer o próximo combate sem usar nenhum item ativo."
+  },
+  {
+    "id": "ch-06",
+    "descricao": "Troque uma das Relíquias sorteadas por uma aleatória antes de começar."
+  },
+  {
+    "id": "ch-07",
+    "descricao": "Você deve jogar com o volume do jogo no máximo por toda esta rodada."
+  },
+  {
+    "id": "ch-08",
+    "descricao": "Sua saúde máxima está reduzida em 30% durante toda a aventura."
+  },
+  {
+    "id": "ch-09",
+    "descricao": "Sempre escolha a opção mais cara quando houver uma loja disponível."
+  },
+  {
+    "id": "ch-10",
+    "descricao": "Você só pode usar o Campeão sorteado — troque se tiver outro equipado."
+  },
+  {
+    "id": "ch-11",
+    "descricao": "Desafio da cegueira: cubra metade da tela com papel por um combate."
+  },
+  {
+    "id": "ch-12",
+    "descricao": "Você deve terminar a aventura sem usar nenhum Power-Up encontrado no caminho."
+  }
+]
