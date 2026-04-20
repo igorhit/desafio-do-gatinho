@@ -4,7 +4,6 @@ import {
   Text,
   ScrollView,
   StyleSheet,
-  Platform,
   Dimensions,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -62,7 +61,7 @@ export default function HomeScreen() {
 
   return (
     <LinearGradient colors={['#0d1117', '#111827', '#0d1117']} style={styles.bg}>
-      <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
+      <SafeAreaView style={styles.safe} edges={['top', 'bottom']} mode="padding">
         <View style={styles.centered}>
           {/* Header */}
           <Animated.View style={[styles.header, headerStyle]}>
@@ -125,6 +124,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   bg: {
     flex: 1,
+    minHeight: '100%' as any,
   },
   safe: {
     flex: 1,

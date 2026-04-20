@@ -39,7 +39,10 @@ export default function SectionRow({ label, icon, enabled, onToggle, children }:
           <View style={[styles.knob, enabled ? styles.knobOn : styles.knobOff]} />
         </TouchableOpacity>
       </View>
-      <Animated.View style={[styles.content, animStyle, !enabled && styles.disabled]}>
+      <Animated.View
+        style={[styles.content, animStyle]}
+        pointerEvents={enabled ? 'auto' : 'none'}
+      >
         {children}
       </Animated.View>
     </View>
@@ -97,6 +100,6 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   disabled: {
-    pointerEvents: 'none',
+    opacity: 1,
   },
 });

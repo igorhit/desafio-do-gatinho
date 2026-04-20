@@ -156,7 +156,10 @@ const styles = StyleSheet.create({
   },
   signatureGlow: {
     position: 'absolute',
-    inset: -4,
+    top: -4,
+    left: -4,
+    right: -4,
+    bottom: -4,
     borderRadius: 16,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.8,
