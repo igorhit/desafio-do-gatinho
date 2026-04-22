@@ -1,0 +1,37 @@
+{
+  "name": "desafio-do-gatinho-electron",
+  "version": "1.0.0",
+  "description": "Wrapper Electron para o Desafio do Gatinho",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable",
+    "build:installer": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.igorhit.desafio-do-gatinho",
+    "productName": "Desafio do Gatinho",
+    "directories": {
+      "output": "../../dist/electron"
+    },
+    "files": [
+      "main.js",
+      "../../dist/web/**"
+    ],
+    "win": {
+      "target": [
+        { "target": "portable", "arch": ["x64"] },
+        { "target": "nsis", "arch": ["x64"] }
+      ],
+      "icon": "../../assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^34.0.0",
+    "electron-builder": "^25.0.0"
+  }
+}

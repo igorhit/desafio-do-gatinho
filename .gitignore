@@ -2,11 +2,17 @@
 
 # dependencies
 node_modules/
+packages/electron/node_modules/
 
 # Expo
 .expo/
-dist/
 web-build/
+
+# Build outputs — ignora conteúdo mas preserva estrutura de pastas
+dist/**
+!dist/web/.gitkeep
+!dist/electron/.gitkeep
+!dist/android/.gitkeep
 expo-env.d.ts
 
 # Native
