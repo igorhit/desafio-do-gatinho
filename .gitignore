@@ -6,6 +6,7 @@ app-expo/node_modules/
 packages/electron/node_modules/
 
 # Expo
+.expo/
 app-expo/.expo/
 app-expo/web-build/
 app-expo/expo-env.d.ts
