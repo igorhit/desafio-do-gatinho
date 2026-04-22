@@ -1,4 +1,4 @@
-# CLAUDE.md — Desafio do Gatinho
+# AGENTS.md — Desafio do Gatinho
 
 Contexto completo do projeto para retomar trabalho em qualquer conversa.
 
@@ -9,7 +9,7 @@ Contexto completo do projeto para retomar trabalho em qualquer conversa.
 Randomizador para o jogo **Legends of Runeterra** (LoR). O usuário configura o que quer sortear, aperta "Gatinho!" e recebe o resultado com animações. Roda na web (browser) e futuramente como APK Android e .exe Windows.
 
 **Dono do projeto:** Igor HIT (igorhit@github)
-**Repo:** https://github.com/igorhit/desafio-do-gatinho
+**Repo:** <https://github.com/igorhit/desafio-do-gatinho>
 
 ---
 
