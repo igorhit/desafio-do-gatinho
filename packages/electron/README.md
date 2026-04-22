@@ -2,39 +2,51 @@
 
 Wrapper que empacota a build web do app num `.exe` standalone.
 
-## Pré-requisitos
-
-1. Gerar a build web do app principal:
-   ```bash
-   # Na raiz do projeto
-   npx expo export --platform web
-   # Isso gera dist/web/ automaticamente via outputDir no app.json
-   ```
-   > Se a saída for para outra pasta, copie o conteúdo para `dist/web/`.
-
-2. Instalar as deps do Electron:
-   ```bash
-   cd packages/electron
-   npm install
-   ```
-
-## Rodar em desenvolvimento
+## Fluxo completo (da raiz do monorepo)
 
 ```bash
-cd packages/electron
-npm start
+# 1. Gera a build web do app
+npm run build:web
+
+# 2. Gera o .exe portátil
+npm run build:win
 ```
 
-## Gerar o `.exe`
+O executável fica em `dist/electron/`.
+
+---
+
+## Rodar em desenvolvimento (sem gerar .exe)
+
+```bash
+# Na raiz
+npm run build:web        # precisa existir antes de abrir o Electron
+
+# Depois, na pasta do Electron
+cd packages/electron
+npm install              # só na primeira vez
+npm run dev
+```
+
+## Gerar apenas o .exe (sem o script da raiz)
 
 ```bash
 cd packages/electron
+npm install              # só na primeira vez
 
-# Portátil (sem instalação, arquivo único)
-npm run build
+# Portátil (arquivo único, sem instalação)
+npm run build:win
 
-# Instalador NSIS (com wizard de instalação)
+# Instalador NSIS (wizard de instalação)
 npm run build:installer
 ```
 
-O executável gerado fica em `dist/electron/`.
+## Estrutura de dependência
+
+```text
+npm run build:win (raiz)
+  └── npm run build:web (app-expo)     → gera dist/web/
+        └── expo export --platform web
+  └── npm run build:win (electron)     → lê dist/web/, gera dist/electron/
+        └── electron-builder
+```

@@ -14,30 +14,85 @@ Randomizador para o jogo **Legends of Runeterra**. Configure as opções, aperte
 
 ---
 
-## Como rodar
+## Estrutura do monorepo
+
+```text
+desafio-do-gatinho/
+├── app-expo/               ← Projeto base (Expo + React Native)
+│   ├── app/                ← Expo Router (telas)
+│   ├── src/                ← Componentes, hooks, dados, config
+│   ├── assets/             ← Imagens e ícones
+│   └── package.json
+│
+├── packages/
+│   ├── electron/           ← Wrapper para gerar .exe Windows
+│   └── android/            ← Configs EAS para gerar APK/AAB
+│
+├── dist/                   ← Saídas de build (gitignored)
+│   ├── web/                ← Build web (base para o Electron)
+│   ├── electron/           ← Executável Windows gerado
+│   └── android/            ← APK/AAB gerado
+│
+└── package.json            ← Scripts unificados do monorepo
+```
+
+---
+
+## Desenvolvimento
 
 ```bash
 # Instalar dependências
-npm install
+cd app-expo && npm install
 
-# Iniciar (web ou QR code para celular)
-npx expo start --clear
+# Rodar (web + QR code celular)
+npm run dev
 
-# Só web
-npx expo start --web --clear
+# Rodar só web
+npm run dev:web
 ```
 
-> **Importante:** use `--clear` na primeira execução (e sempre que instalar novas dependências) para limpar o cache do Metro.
+> Use `--clear` se mudar dependências ou ver comportamento estranho:
+> `cd app-expo && npx expo start --web --clear`
 
-Acesse `http://localhost:8081` no browser, ou escaneie o QR code com o app **Expo Go** no celular.
+---
+
+## Gerar executável Windows (.exe)
+
+```bash
+# Na raiz do monorepo — faz tudo em sequência
+npm run build:win
+```
+
+Isso executa:
+
+1. `build:web` — exporta o app para `dist/web/`
+2. `build:win` (Electron) — empacota `dist/web/` num `.exe` em `dist/electron/`
+
+> Primeira vez: `cd packages/electron && npm install`
+
+Veja mais detalhes em [packages/electron/README.md](packages/electron/README.md).
+
+---
+
+## Gerar APK Android
+
+```bash
+# Na raiz do monorepo
+npm run build:apk    # APK para teste interno
+npm run build:aab    # AAB para Play Store
+```
+
+> Requer `eas-cli` instalado e conta Expo: `npm install -g eas-cli && eas login`
+
+Veja mais detalhes em [packages/android/README.md](packages/android/README.md).
 
 ---
 
 ## Como substituir os assets mock pelos reais
 
-Os assets ficam em `assets/` com a seguinte estrutura:
+Os assets ficam em `app-expo/assets/` com a seguinte estrutura:
 
-```
+```text
 assets/
 ├── champions/    # Imagens de campeões
 ├── relics/       # Imagens de relíquias
@@ -45,90 +100,40 @@ assets/
 └── ui/           # Assets de interface
 ```
 
-Cada item nos arquivos JSON (`src/data/`) possui um campo `imagePath` que aponta para o arquivo dentro de `assets/`. Por exemplo:
+Cada item nos arquivos JSON (`app-expo/src/data/`) possui um campo `imagePath`.
+Basta colocar o arquivo correspondente em `assets/` e o componente `ItemCard` carregará automaticamente.
 
-```json
-{ "id": "jinx", "imagePath": "champions/jinx.png" }
-```
-
-Basta colocar o arquivo `assets/champions/jinx.png` e o componente `ItemCard` carregará automaticamente via `require`.
-
-> **Nota:** Para usar `require()` dinâmico no React Native, você precisará criar um mapa de imagens estático em `src/utils/imageMap.ts` apontando `imagePath → require(...)`.
+> **Nota:** Para `require()` dinâmico no React Native, crie um mapa estático em `app-expo/src/utils/imageMap.ts` apontando `imagePath → require(...)`.
 
 ---
 
 ## Como ajustar dificuldade e tags
 
-Edite `src/config/difficulty.ts`:
+Edite `app-expo/src/config/difficulty.ts`:
 
 ```ts
 const difficultyConfig = {
   dificil: {
-    label: 'Difícil',
     surpriseChance: 0.5,   // Chance do Desafio Surpresa aparecer (0–1)
     sixStarChance: 0.1,    // Chance de sortear campeão 6★ (0–1)
     tagWeights: [
       { tag: 'forte', weight: 0.0 },  // 0 = nunca aparece
       { tag: 'comum', weight: 1.5 },  // >1 = aparece mais
-      // ...
     ],
   },
 };
 ```
-
-**Regras dos pesos:**
-- `weight: 0` → item com essa tag nunca é sorteado nessa dificuldade
-- `weight: 1` → peso neutro (chance normal)
-- `weight: 2` → aparece com o dobro de frequência
-
-Para adicionar novas tags, basta adicioná-las ao JSON dos itens e incluir o peso correspondente em cada nível de dificuldade.
 
 ---
 
 ## Tecnologias utilizadas
 
 | Tecnologia | Uso |
-|---|---|
+| --- | --- |
 | React Native + Expo SDK 54 | Framework base |
 | Expo Router | Navegação baseada em arquivos |
 | React Native Reanimated 4 | Animações performáticas |
 | Expo Linear Gradient | Gradientes e visuais de raridade |
+| Electron + electron-builder | Empacotamento Windows |
+| EAS Build | Build Android (APK/AAB) |
 | TypeScript | Tipagem em todo o projeto |
-
----
-
-## Estrutura do projeto
-
-```
-desafio-do-gatinho/
-├── app/
-│   ├── +html.tsx           # Configuração do HTML raiz (web)
-│   ├── _layout.tsx         # Layout raiz (Expo Router)
-│   └── index.tsx           # Tela principal
-├── src/
-│   ├── components/
-│   │   ├── ItemCard.tsx         # Card animado reutilizável
-│   │   ├── SectionRow.tsx       # Linha com toggle on/off
-│   │   ├── ChampionSlot.tsx     # Seção de campeão
-│   │   ├── RelicSlot.tsx        # Seção de relíquias
-│   │   ├── AdventureSlot.tsx    # Seção de aventura
-│   │   ├── SurpriseChallenge.tsx # Desafio surpresa animado
-│   │   ├── DifficultySelector.tsx # Seletor de dificuldade
-│   │   └── GatinhoButton.tsx    # Botão principal com animação
-│   ├── config/
-│   │   └── difficulty.ts        # Configuração de dificuldade e pesos
-│   ├── data/
-│   │   ├── champions.json
-│   │   ├── relics.json
-│   │   ├── adventures.json
-│   │   └── challenges.json
-│   ├── hooks/
-│   │   └── useRandomizer.ts     # Lógica central de randomização
-│   └── utils/
-│       └── weightedRandom.ts    # Sorteio ponderado puro e testável
-└── assets/
-    ├── champions/
-    ├── relics/
-    ├── adventures/
-    └── ui/
-```

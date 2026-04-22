@@ -2,18 +2,22 @@
 
 # dependencies
 node_modules/
+app-expo/node_modules/
 packages/electron/node_modules/
 
 # Expo
-.expo/
-web-build/
+app-expo/.expo/
+app-expo/web-build/
+app-expo/expo-env.d.ts
+
+# EAS
+app-expo/eas.json
 
 # Build outputs — ignora conteúdo mas preserva estrutura de pastas
 dist/**
 !dist/web/.gitkeep
 !dist/electron/.gitkeep
 !dist/android/.gitkeep
-expo-env.d.ts
 
 # Native
 .kotlin/
@@ -43,5 +47,5 @@ yarn-error.*
 *.tsbuildinfo
 
 # generated native folders
-/ios
-/android
+app-expo/ios/
+app-expo/android/
